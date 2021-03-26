@@ -1,15 +1,4 @@
-body {
-	background-color: red;
+@import 'normalize.css';
 
-	p {
-		color: green;
-
-		span {
-			color: red;
-		}
-	}
-
-	a {
-		color: yellow;
-	}
-}
+@import 'base/variables';
+@import 'base/elements';

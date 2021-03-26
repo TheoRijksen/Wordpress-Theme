@@ -18,12 +18,21 @@
   "homepage": "https://github.com/TheoRijksen/Wordpress-Theme#readme",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "gulp-clean-css": "^4.3.0",
     "gulp-postcss": "^9.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "normalize.css": "^8.0.1",
     "postcss": "^8.2.8",
     "postcss-import": "^14.0.0",
+    "postcss-mixins": "^7.0.3",
     "postcss-nested": "^5.0.5"
   },
   "dependencies": {
     "gulp": "^4.0.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "last 2 versions",
+    "ie 11"
+  ]
 }

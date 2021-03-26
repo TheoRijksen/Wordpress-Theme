@@ -1,17 +1,32 @@
 // NPM packages
 const gulp = require('gulp'),
 	postcss = require('gulp-postcss'),
-	nested = require('postcss-nested'),
+	cssNested = require('postcss-nested'),
 	autoprefixer = require('autoprefixer'),
-	cssImport = require('postcss-import');
+	cssImport = require('postcss-import'),
+	cssMixins = require('postcss-mixins'),
+	cleanCSS = require('gulp-clean-css'),
+	sourcemaps = require('gulp-sourcemaps');
 
-const themeConfig = require('./theme-config.json');
+const config = require('./theme-config.json');
 
 function css() {
 	return gulp
-		.src('./src/css/**/*.css')
-		.pipe(postcss([nested, autoprefixer, cssImport]))
-		.pipe(gulp.dest('./dist'));
+		.src(config.paths.src.css)
+		.pipe(sourcemaps.init())
+		.pipe(
+			postcss([
+				cssImport,
+				cssMixins,
+				cssNested,
+				autoprefixer({
+					grid: 'autoplace',
+				}),
+			])
+		)
+		.pipe(cleanCSS())
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest(config.paths.dist.css));
 }
 
 exports.build = gulp.series(css);
