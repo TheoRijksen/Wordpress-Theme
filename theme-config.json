@@ -1,10 +1,10 @@
 {
 	"paths": {
 		"src": {
-			"css": "./src/css/style.css"
+			"css": "./src/css"
 		},
 		"dist": {
-			"css": "dist/"
+			"base": "C:/laragon/www/wordpress/wp-content/themes/wordpress-theme/"
 		}
 	}
 }

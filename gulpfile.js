@@ -12,7 +12,7 @@ const config = require('./theme-config.json');
 
 function css() {
 	return gulp
-		.src(config.paths.src.css)
+		.src(`${config.paths.src.css}/style.css`)
 		.pipe(sourcemaps.init())
 		.pipe(
 			postcss([
@@ -26,11 +26,11 @@ function css() {
 		)
 		.pipe(cleanCSS())
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(config.paths.dist.css));
+		.pipe(gulp.dest(config.paths.dist.base));
 }
 
 exports.build = gulp.series(css);
 
 exports.default = function () {
-	gulp.watch('./src/css/**/*.css', css);
+	gulp.watch(`${config.paths.src.css}/**/*.css`, css);
 };
