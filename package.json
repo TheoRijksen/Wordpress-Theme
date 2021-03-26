@@ -1,0 +1,29 @@
+{
+  "name": "wordpress-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheoRijksen/Wordpress-Theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheoRijksen/Wordpress-Theme/issues"
+  },
+  "homepage": "https://github.com/TheoRijksen/Wordpress-Theme#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "gulp-postcss": "^9.0.0",
+    "postcss": "^8.2.8",
+    "postcss-import": "^14.0.0",
+    "postcss-nested": "^5.0.5"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
