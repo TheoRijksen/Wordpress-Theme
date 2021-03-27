@@ -29,8 +29,15 @@ function css() {
 		.pipe(gulp.dest(config.paths.dist.base));
 }
 
+function php() {
+	return gulp
+		.src(`${config.paths.src.base}**/*.php`)
+		.pipe(gulp.dest(config.paths.dist.base));
+}
+
 exports.build = gulp.series(css);
 
 exports.default = function () {
 	gulp.watch(`${config.paths.src.css}/**/*.css`, css);
+	gulp.watch(`${config.paths.src.base}**/*.php`, php);
 };
